@@ -2,10 +2,20 @@
 export interface Props {
 	link: string;
 	name: string;
+	color: string;
+	whiteText?: boolean;
 }
 
+const { link, name, color, whiteText } = Astro.props;
 
-const { link, name } = Astro.props;
 ---
 
-<a class=" p-2 bg-indigo-500 rounded-md text-black text-center hover:text-white ease-in-out duration-75" target="_blank" href={`https://${link}`}>{name}</a>
+<a
+	class={`items-center gap-2 flex p-2 ${color} rounded-md ${
+		whiteText ? "text-white" : "text-black"
+	}  text-center hover:text-white ease-in-out duration-75`}
+	href={`https://${link}`}
+>
+	<slot />
+	{name}
+</a>

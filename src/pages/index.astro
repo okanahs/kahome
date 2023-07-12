@@ -2,9 +2,22 @@
 import Layout from "../layouts/Layout.astro";
 import Fact from "../components/Fact.tsx";
 import Link from "../components/Link.astro";
+import youtube from "../../public/youtube.svg";
+import discord from "../../public/discord.svg";
+import search from "../../public/search.svg";
+import yard from "../../public/TheYard.svg";
+import anime from "../../public/9anime.svg";
+import drive from "../../public/google-drive.svg";
+import gmail from "../../public/gmail.svg";
+import github from "../../public/github.svg";
+import monkeytype from "../../public/monkeytype.svg";
+import chat from "../../public/ChatGptLogo.svg";
+import neovim from "../../public/NeovimLogo.svg";
+import reddit from "../../public/reddit.svg";
+import terminal from "../../public/terminal.svg";
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Homepage">
 	<main class="bg-[#21232B] w-screen h-screen relative">
 		<div
 			class="w-[35rem] h-fit bg-gray-700 p-4 inset-0 m-auto absolute rounded-xl shadow-black/50 shadow-xl"
@@ -22,32 +35,78 @@ import Link from "../components/Link.astro";
 					name="q"
 					placeholder="Search"
 				/>
-				<button class="pr-2" type="submit"
-					><svg
-						xmlns="http://www.w3.org/2000/svg"
-						height="1em"
-						viewBox="0 0 512 512"
-						<path
-						d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"
-					></svg></button
-				>
+				<button class="pr-2" type="submit">
+					<img src={search} alt="search icon" />
+				</button>
 			</form>
 			<div class="p-2 grid grid-cols-3 grid-rows-4 gap-2">
-				<Link name="youtube" link="www.youtube.com" />
-				<Link name="discord" link="www.discord.com/app" />
-				<Link name="chat gpt" link="chat.openai.com" />
-				<Link name="neovim" link="reddit.com/r/neovim" />
-				<Link name="unixporn" link="reddit.com/r/unixporn" />
-				<Link name="ludwig" link="reddit.com/r/LudwigAhgren" />
-				<Link name="github" link="github.com" />
-				<Link name="anime" link="9anime.to" />
-				<Link name="google drive" link="drive.google.com" />
-				<Link name="gmail" link="mail.google.com/mail" />
-				<Link name="monkey type" link="monkeytype.com" />
-				<Link name="the yard" link="www.youtube.com/@TheYardPodcast" />
+				<Link color="bg-[#ff0000]" name="Youtube" link="www.youtube.com">
+					<img src={youtube} alt="youtube logo" />
+				</Link>
+				<Link color="bg-[#834FD6]" name="Anime" link="9anime.to">
+					<img src={anime} alt="9anime logo" />
+				</Link>
+				<Link
+					color="bg-[#5865f2]"
+					name="Discord"
+					link="www.discord.com/app"
+				>
+					<img src={discord} alt="discord logo" />
+				</Link>
+				<Link
+					color="bg-[#27432F]"
+					name="The Yard"
+					link="www.youtube.com/@TheYardPodcast"
+				>
+					<img src={yard} alt="the yard logo" />
+				</Link>
+				<Link color="bg-[#0EA882]" name="ChatGpt" link="chat.openai.com">
+					<img src={chat} alt="chat gpt logo" />
+				</Link>
+				<Link
+					color="bg-green-300"
+					name="Neovim"
+					link="reddit.com/r/neovim"
+				>
+					<img src={neovim} alt="neovim logo" />
+				</Link>
+				<Link
+					color="bg-[#ff4500]"
+					name="Unixporn"
+					link="reddit.com/r/unixporn"
+				>
+					<img src={terminal} alt="terminal icon" />
+				</Link>
+				<Link
+					color="bg-[#ff4500]"
+					name="Ludwig"
+					link="reddit.com/r/LudwigAhgren"
+				>
+					<img src={reddit} alt="reddit logo" />
+				</Link>
+				<Link whiteText color="bg-[#333]" name="Github" link="github.com">
+					<img src={github} alt="github logo" />
+				</Link>
+				<Link
+					color="bg-[#4285f4]"
+					name="Google Drive"
+					link="drive.google.com"
+				>
+					<img src={drive} alt="google drive logo" />
+				</Link>	
+				<Link
+					color="bg-[#ea4335]"
+					name="Gmail"
+					link="mail.google.com/mail"
+				>
+					<img src={gmail} alt="gmail logo" />
+				</Link>
+				<Link whiteText color="bg-[#121520]" name="Monkeytype" link="monkeytype.com">
+					<img src={monkeytype} alt="monkeytype logo" />
+				</Link>
 			</div>
 			<h2 class="text-center font-bold text-slate-300">Fun Fact</h2>
-			<div class="w-full h-[2px] bg-slate-300/50 my-2" />
+			<div class="w-full h-[2px] bg-slate-300/50 my-2"></div>
 			<Fact client:load />
 		</div>
 	</main>
