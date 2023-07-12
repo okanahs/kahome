@@ -1,0 +1,11 @@
+---
+export interface Props {
+	link: string;
+	name: string;
+}
+
+
+const { link, name } = Astro.props;
+---
+
+<a class=" p-2 bg-indigo-500 rounded-md text-black text-center hover:text-white ease-in-out duration-75" target="_blank" href={`https://${link}`}>{name}</a>
