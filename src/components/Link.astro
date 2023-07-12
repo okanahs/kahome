@@ -13,9 +13,10 @@ const { link, name, color, whiteText } = Astro.props;
 <a
 	class={`items-center gap-2 flex p-2 ${color} rounded-md ${
 		whiteText ? "text-white" : "text-black"
-	}  text-center hover:text-white ease-in-out duration-75`}
+	}  text-center hover:text-slate-400 ease-in-out duration-75`}
 	href={`https://${link}`}
 >
 	<slot />
-	{name}
+	<p class="font-medium">{name}</p>
+	
 </a>
