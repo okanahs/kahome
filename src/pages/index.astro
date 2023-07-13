@@ -15,15 +15,14 @@ import chat from "../../public/ChatGptLogo.svg";
 import neovim from "../../public/NeovimLogo.svg";
 import reddit from "../../public/reddit.svg";
 import terminal from "../../public/terminal.svg";
+
+import '../style.css'
 ---
 
 <Layout title="Homepage">
-	<main class="bg-[#21232B] w-screen h-screen relative">
-		<div
-			class="w-[35rem] h-fit bg-gray-700 p-4 inset-0 m-auto absolute rounded-xl shadow-black/50 shadow-xl"
-		>
+	<main class="bg-gray-950 w-screen h-screen relative">
+		<div class="w-[35rem] h-fit bg-slate-800 p-4 inset-0 m-auto absolute rounded-xl my-shadow border-solid border-violet-600/20 border-2">
 			<form
-				style="position:relative"
 				method="get"
 				action="https://duckduckgo.com/"
 				target="_top"
@@ -35,6 +34,7 @@ import terminal from "../../public/terminal.svg";
 					name="q"
 					placeholder="Search"
 					autofocus
+					autocomplete="off"
 				/>
 				<button class="pr-2" type="submit">
 					<img src={search} alt="search icon" />
@@ -44,7 +44,7 @@ import terminal from "../../public/terminal.svg";
 				<Link color="bg-[#ff0000]" name="Youtube" link="www.youtube.com">
 					<img src={youtube} alt="youtube logo" />
 				</Link>
-				<Link color="bg-[#834FD6]" name="Anime" link="9anime.to">
+				<Link color="bg-[#834FD6]" name="Anime" link="9anime.to/home">
 					<img src={anime} alt="9anime logo" />
 				</Link>
 				<Link
@@ -65,7 +65,7 @@ import terminal from "../../public/terminal.svg";
 					<img src={chat} alt="chat gpt logo" />
 				</Link>
 				<Link
-					color="bg-green-300"
+					color="bg-green-500"
 					name="Neovim"
 					link="reddit.com/r/neovim"
 				>
@@ -85,7 +85,7 @@ import terminal from "../../public/terminal.svg";
 				>
 					<img src={reddit} alt="reddit logo" />
 				</Link>
-				<Link whiteText color="bg-[#333]" name="Github" link="github.com">
+				<Link color="bg-[#333]" name="Github" link="github.com">
 					<img src={github} alt="github logo" />
 				</Link>
 				<Link
@@ -102,7 +102,7 @@ import terminal from "../../public/terminal.svg";
 				>
 					<img src={gmail} alt="gmail logo" />
 				</Link>
-				<Link whiteText color="bg-[#121520]" name="Monkeytype" link="monkeytype.com">
+				<Link color="bg-[#121520]" name="Monkeytype" link="monkeytype.com">
 					<img src={monkeytype} alt="monkeytype logo" />
 				</Link>
 			</div>
@@ -112,3 +112,24 @@ import terminal from "../../public/terminal.svg";
 		</div>
 	</main>
 </Layout>
+
+<script>
+    const form = document.querySelector('form');
+    form.addEventListener('submit', e => {
+		e.preventDefault(); // Prevent the form from submitting
+
+		const input = document.querySelector('input[name="q"]');
+		let inputValue = input.value.trim();
+		if (inputValue.startsWith("/y")) {
+			inputValue = inputValue.substring(3); // Remove the first two characters ("/y")
+			form.action = "https://www.youtube.com/results";
+		}
+
+		// Update the input value before submitting the form
+		input.value = inputValue;
+
+		// Submit the form
+		form.submit();
+   	})
+</script>
+

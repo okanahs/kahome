@@ -3,17 +3,15 @@ export interface Props {
 	link: string;
 	name: string;
 	color: string;
-	whiteText?: boolean;
 }
 
-const { link, name, color, whiteText } = Astro.props;
+const { link, name, color } = Astro.props;
+
 
 ---
 
 <a
-	class={`items-center gap-2 flex p-2 ${color} rounded-md ${
-		whiteText ? "text-white" : "text-black"
-	}  text-center hover:text-slate-400 ease-in-out duration-75`}
+	class={`items-center gap-2 flex p-2 ${color} rounded-md text-white text-center hover:outline-slate-400 outline-slate-400 hover:outline ease-in-out duration-75 outline-offset-[-2.8px]`}
 	href={`https://${link}`}
 >
 	<slot />
