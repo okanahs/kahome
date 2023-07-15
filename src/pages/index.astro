@@ -20,7 +20,7 @@ import '../style.css'
 ---
 
 <Layout title="Homepage">
-	<main class="bg-gray-950 w-screen h-screen relative">
+	<main class="bg-gray-950 w-screen h-screen relative my-background">
 		<div class="w-[35rem] h-fit bg-slate-700 p-4 inset-0 m-auto absolute rounded-xl my-shadow border-solid border-violet-600/20 border-2">
 			<form
 				method="get"
@@ -114,6 +114,14 @@ import '../style.css'
 </Layout>
 
 <script>
+	function isValidUrl(url) {
+		try {
+			new URL(url);
+			return true;
+		} catch (err) {
+			return false;
+		}
+	}
     const form = document.querySelector('form');
     form.addEventListener('submit', e => {
 		e.preventDefault(); // Prevent the form from submitting
@@ -123,10 +131,16 @@ import '../style.css'
 		if (inputValue.startsWith("/y")) {
 			inputValue = inputValue.substring(3); // Remove the first two characters ("/y")
 			form.action = "https://www.youtube.com/results";
+			// Update the input value before submitting the form
+			input.value = inputValue;
+		}
+		if (isValidUrl(inputValue)) {
+			form.action = inputValue;
+		}else if (inputValue.includes(".com")) {
+			form.action = `https://${inputValue}`;
 		}
 
-		// Update the input value before submitting the form
-		input.value = inputValue;
+
 
 		// Submit the form
 		form.submit();
