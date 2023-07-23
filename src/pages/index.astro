@@ -2,11 +2,12 @@
 import Layout from '../layouts/Layout.astro';
 import Link from '../components/Link.astro';
 import '../style.css';
-import data from "../../facts.json"
+import Fact from '../components/Fact.svelte';
+// import data from '../../public/facts.json';
+import data from '../../facts.json';
 
 let facts: string[] = data.facts;
 
-const randomString = facts[Math.floor(Math.random() * facts.length)];
 ---
 
 <Layout title="Homepage">
@@ -121,7 +122,8 @@ const randomString = facts[Math.floor(Math.random() * facts.length)];
 					</Link>
 				</div>
 				<div class="w-full h-[3px] bg-slate-400/50 rounded-full my-3"></div>
-				<p class="text-center text-white font-medium">{randomString}</p>
+				<!-- <p class="text-center text-white font-medium">{randomString}</p> -->
+				<Fact client:load facts={facts} />
 			</div>
 			<div class="w-fit h-fit bg-slate-700 p-4 rounded-xl my-shadow border-solid border-violet-600/20 border-2 flex flex-col gap-2">
 				<Link color="bg-[#4285f4]" name="Google Drive" link="drive.google.com">
@@ -179,10 +181,5 @@ form.addEventListener('submit', e => {
 		form.action = `https://${inputValue}`;
 	}
 	form.submit();
-});
-//---------------------------------------------------------------------
-const code = document.querySelector('#Code');
-code.addEventListener('click', () => {
-	codeOpen = !codeOpen;
 });
 </script>
