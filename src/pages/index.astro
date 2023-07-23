@@ -2,6 +2,11 @@
 import Layout from '../layouts/Layout.astro';
 import Link from '../components/Link.astro';
 import '../style.css';
+import data from "../../facts.json"
+
+let facts: string[] = data.facts;
+
+const randomString = facts[Math.floor(Math.random() * facts.length)];
 ---
 
 <Layout title="Homepage">
@@ -115,6 +120,8 @@ import '../style.css';
 						<svg xmlns="http://www.w3.org/2000/svg" height="1em" fill="#fff" viewBox="0 0 512 512"><path d="M391.17 103.47h-38.63v109.7h38.63ZM285 103h-38.63v109.75H285ZM120.83 0 24.31 91.42v329.16h115.83V512l96.53-91.42h77.25L487.69 256V0Zm328.24 237.75-77.22 73.12h-77.24l-67.6 64v-64h-86.87V36.58h308.93Z"></path></svg>
 					</Link>
 				</div>
+				<div class="w-full h-[3px] bg-slate-400/50 rounded-full my-3"></div>
+				<p class="text-center text-white font-medium">{randomString}</p>
 			</div>
 			<div class="w-fit h-fit bg-slate-700 p-4 rounded-xl my-shadow border-solid border-violet-600/20 border-2 flex flex-col gap-2">
 				<Link color="bg-[#4285f4]" name="Google Drive" link="drive.google.com">
