@@ -196,7 +196,6 @@ let facts: string[] = data.facts;
 					</Link>
 				</div>
 				<div class="w-full h-[3px] bg-slate-400/50 rounded-full my-3"></div>
-				<!-- <p class="text-center text-white font-medium">{randomString}</p> -->
 				<Fact client:load facts={facts} />
 			</div>
 			<div class="w-fit h-fit bg-slate-700 p-4 rounded-xl my-shadow border-solid border-violet-600/20 border-2 flex flex-col gap-2">
@@ -245,7 +244,7 @@ form.addEventListener('submit', e => {
 	const input = document.querySelector('input[name="q"]');
 	let inputValue = input.value.trim();
 	if (inputValue.startsWith('/y')) {
-		inputValue = inputValue.substring(3); // Remove the first two characters ("/y")
+		inputValue = inputValue.substring(3);
 		form.action = 'https://www.youtube.com/results';
 		input.value = inputValue;
 	}
