@@ -253,6 +253,11 @@ form.addEventListener('submit', e => {
 		form.action = 'https://crates.io/search?q=';
 		input.value = inputValue;
 	}
+	if (inputValue.startsWith('/r')) {
+		inputValue = inputValue.substring(3);
+		form.action = 'https://www.reddit.com/search/';
+		input.value = inputValue;
+	}
 	if (isValidUrl(inputValue)) {
 		form.action = inputValue;
 	} else if (inputValue.includes('.com') || inputValue.includes('.ca') || inputValue.includes('.io')) {
