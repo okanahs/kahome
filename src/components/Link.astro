@@ -9,7 +9,7 @@ const { link, name, color } = Astro.props;
 ---
 
 <a
-	class={`drop-shadow-md items-center gap-2 flex p-2 ${color} rounded-md text-white text-center hover:outline-slate-400 outline-slate-400 hover:outline ease-in-out duration-75 outline-offset-[-2.8px] cursor-pointer`}
+	class={`drop-shadow-md items-center gap-2 flex p-2 ${color} w-full rounded-md text-white text-center hover:outline-slate-400 outline-slate-400 hover:outline ease-in-out duration-75 outline-offset-[-2.8px] cursor-pointer`}
 	href={`https://${link}`}
 >
 	<slot />

@@ -6,7 +6,6 @@
 .my-shadow {
 	box-shadow: 0px 0px 29px 19px rgba(124, 58, 237, 0.3);
 	-webkit-box-shadow: 0px 0px 29px 19px rgba(124, 58, 237, 0.3);
-	/* @appy border-solid border-violet-600/20 border-2   */
 }
 
 .my-background {
