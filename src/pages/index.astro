@@ -2,18 +2,6 @@
 import Layout from '../layouts/Layout.astro';
 import Link from '../components/Link.astro';
 import '../style.css';
-
-if (Astro.request.method === 'GET') {
-	try {
-		const data = await Astro.request.formData();
-		alert(data);
-		// Do something with the data
-	} catch (error) {
-		if (error instanceof Error) {
-			console.error(error.message);
-		}
-	}
-}
 ---
 
 <Layout title="Homepage">
@@ -168,7 +156,7 @@ if (Astro.request.method === 'GET') {
 							></path></svg
 						>
 					</Link>
-					<Link color="bg-[#ff4500]" name="Unixporn" link="reddit.com/r/unixporn">
+					<Link color="bg-[#ff4500]" name="Sailing" link="reddit.com/r/piracy">
 						<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512"><path fill="#fff" d="M9 87a32 32 0 1 1 46-46l192 192c12 13 12 33 0 46L55 471a32 32 0 0 1-46-46l170-169L9 87zm247 329h288a32 32 0 1 1 0 64H256a32 32 0 1 1 0-64z"></path></svg>
 					</Link>
 					<Link color="bg-[#ff4500]" name="Ludwig" link="reddit.com/r/LudwigAhgren">
