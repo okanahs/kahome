@@ -4,10 +4,10 @@
 
 
 .my-shadow {
-	box-shadow: 0px 0px 29px 19px rgba(124, 58, 237, 0.3);
-	-webkit-box-shadow: 0px 0px 29px 19px rgba(124, 58, 237, 0.3);
+	box-shadow: 0px 0px 29px 19px rgba(137, 207, 240,0.3);
+	-webkit-box-shadow: 0px 0px 29px 19px rgba(137, 207, 240,0.3);
 }
 
 .my-background {
-	background: radial-gradient(circle, rgba(67,27,137,1) 0%, rgba(3,7,18,1) 57%);
+	background: radial-gradient(circle, hsl(199.22, 77.44%, 60%) 0%, black 57%);
 }
